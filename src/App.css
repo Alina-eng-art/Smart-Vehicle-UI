@@ -3,12 +3,14 @@ body {
   background: #dcdcdc;
   height: 200vh; /* чтобы был скролл */
   font-family: sans-serif;
+  overflow-x: hidden;
 }
 
 .app {
   width: 100vw;
   height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* ===== БЛОК ===== */
@@ -321,6 +323,7 @@ body {
   transform: translateX(-50%);
   display: flex;
   gap: 35px;
+
 }
 
 /* центр */
@@ -1852,6 +1855,7 @@ body {
   transform: translateX(-50%);
   display: flex;
   gap: 35px;
+  
 }
 
 /* REAL BOTTOM */
