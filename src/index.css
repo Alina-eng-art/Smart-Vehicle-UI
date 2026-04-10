@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: linear-gradient(180deg, #ff2e2e, #b30000);
+}
+
+/* экран */
+.screen {
+  display: flex;
+  height: 100vh;
+  padding: 40px;
+  gap: 20px;
+}
+
+/* левая панель */
+.sidebar {
+  width: 80px;
+  background: #f4f4f4;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* центр */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* верх */
+.topbar {
+  height: 60px;
+  background: #f4f4f4;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* контент */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* большая карточка */
+.big-card {
+  height: 220px;
+  background: #f4f4f4;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* нижние */
+.bottom-grid {
+  display: flex;
+  gap: 20px;
+}
+
+.small-card {
+  flex: 1;
+  height: 120px;
+  background: #f4f4f4;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* правая панель */
+.rightbar {
+  width: 260px;
+  background: #f4f4f4;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
