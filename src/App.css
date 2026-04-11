@@ -7,7 +7,7 @@ body {
 }
 
 .app {
-  width: 100vw;
+   width: 100%;
   height: 100vh;
   position: relative;
   overflow-x: hidden;
@@ -155,6 +155,7 @@ body {
 .hide-lines {
   opacity: 0;
   transform: scale(0.8);
+  
 }
 
 .nav-line {
@@ -272,16 +273,7 @@ body {
 
 
 /* анимация появления */
-@keyframes fadeInNav {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 
 .left {
   position: absolute;
@@ -385,30 +377,7 @@ body {
 .slide-down { animation: slideDown 1s ease forwards; }
 .fade-in { animation: fade 1.2s ease forwards; }
 
-@keyframes slideLeft {
-  from { transform: translateX(-200px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
 
-@keyframes slideRight {
-  from { transform: translateX(200px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { transform: translateY(200px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes slideDown {
-  from { transform: translateY(-200px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 
 /* 🚗 МАШИНА (ГАРАНТИРОВАННО ВИДНА) */
 
@@ -1210,16 +1179,6 @@ body {
 
 
 /* анимация появления */
-@keyframes fadeInNav {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .left {
   position: absolute;
@@ -1322,30 +1281,7 @@ body {
 .slide-down { animation: slideDown 1s ease forwards; }
 .fade-in { animation: fade 1.2s ease forwards; }
 
-@keyframes slideLeft {
-  from { transform: translateX(-200px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
 
-@keyframes slideRight {
-  from { transform: translateX(200px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { transform: translateY(200px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes slideDown {
-  from { transform: translateY(-200px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 
 /* 🚗 МАШИНА (ГАРАНТИРОВАННО ВИДНА) */
 
@@ -2074,3 +2010,184 @@ body {
   font-weight: 600;
 }
 
+/* ================================= */
+/* 🔥 ЧЁТКИЕ ВЫЛЕТЫ ИЗ УГЛОВ */
+/* ================================= */
+
+.left {
+  animation: leftCornerIn 1s cubic-bezier(.25,.8,.25,1) forwards;
+}
+
+.left-extra {
+  animation: bottomLeftCornerIn 1s cubic-bezier(.25,.8,.25,1) forwards;
+}
+
+.bottom {
+  animation: bottomCornerIn 1s cubic-bezier(.25,.8,.25,1) forwards;
+}
+
+.right {
+  animation: rightCornerIn 1s cubic-bezier(.25,.8,.25,1) forwards;
+}
+
+/* ================================= */
+/* 🔥 КЕЙФРЕЙМЫ */
+/* ================================= */
+
+/* ЛЕВЫЙ ВЕРХ */
+@keyframes leftCornerIn {
+  from {
+    transform: translate(-250px, -150px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, -50%); /* сохраняем твой translateY */
+    opacity: 1;
+  }
+}
+
+/* ЛЕВЫЙ НИЗ */
+@keyframes bottomLeftCornerIn {
+  from {
+    transform: translate(-250px, 250px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+/* НИЗ (ЦЕНТР) */
+@keyframes bottomCornerIn {
+  from {
+    transform: translate(-50%, 250px); /* важно сохранить X */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+}
+
+/* ПРАВЫЙ ВЕРХ */
+@keyframes rightCornerIn {
+  from {
+    transform: translate(250px, -150px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+/* ================================= */
+/* 🔥 ФИКС ПОЛОСОК СЛЕВА (skeleton) */
+/* ================================= */
+
+.skeleton-top {
+  animation: skeletonCornerIn 1s cubic-bezier(.25,.8,.25,1) forwards;
+}
+
+@keyframes skeletonCornerIn {
+  from {
+    transform: translate(-50%, -200px); /* из верхнего угла */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%); /* ВАЖНО сохранить центр */
+    opacity: 1;
+  }
+}
+
+/* ============================== */
+/* 🔥 FAKE NAVBAR (ПОЛОСКИ) */
+/* ============================== */
+
+/* появление */
+.top-lines-full {
+  animation: fakeNavIn 0.7s cubic-bezier(.25,.8,.25,1) forwards;
+}
+
+@keyframes fakeNavIn {
+  from {
+    transform: translateY(-120px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* исчезновение ПЛАВНО */
+.hide-lines {
+  animation: fakeNavOut 0.6s ease forwards;
+}
+
+@keyframes fakeNavOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-120px);
+    opacity: 0;
+  }
+}
+
+/* ============================== */
+/* 🔥 REAL NAVBAR */
+/* ============================== */
+
+.real-navbar {
+  animation: realNavIn 0.7s cubic-bezier(.25,.8,.25,1) forwards;
+}
+
+@keyframes realNavIn {
+  from {
+    transform: translateY(-120px) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(0.9);
+    opacity: 1;
+  }
+}
+/* УБИРАЕМ ЛОМАЮЩИЕ ТРАНСФОРМЫ У НАВДАРОВ */
+.fake-navbar,
+.real-navbar {
+  transform: none !important;
+}
+
+/* ВОЗВРАЩАЕМ ФЕЙК + СДВИГАЕМ ВПРАВО */
+.fake-navbar {
+  position: fixed;
+  top: 20px;
+
+  left: auto;      /* ВАЖНО */
+  right: 40px;     /* ← двигай этим */
+
+  translate: 0 0;  /* убрали -50% */
+  
+  opacity: 1;
+  z-index: 999;
+}
+
+
+/* УБИРАЕМ ВСЕ АНИМАЦИИ С НЕГО */
+.fake-navbar,
+.real-navbar {
+  animation: none !important;
+  transition: opacity 0.3s ease !important;
+}
+
+
+.top {
+  left: 70% !important;   /* ← двигает вправо */
+}
+
+.real-navbar {
+  margin-left: -350px;
+}
