@@ -2156,10 +2156,7 @@ body {
   }
 }
 /* УБИРАЕМ ЛОМАЮЩИЕ ТРАНСФОРМЫ У НАВДАРОВ */
-.fake-navbar,
-.real-navbar {
-  transform: none !important;
-}
+
 
 /* ВОЗВРАЩАЕМ ФЕЙК + СДВИГАЕМ ВПРАВО */
 .fake-navbar {
@@ -2189,5 +2186,5 @@ body {
 }
 
 .real-navbar {
-  margin-left: -350px;
+  left: calc(45% + 0px); /* ← двигаешь вправо */
 }
